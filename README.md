@@ -13,6 +13,8 @@ Dvorak users: the keys below are named after their appearance on a QWERTY keyboa
 
 ## Summary
 
+Most "layers" are accessed by holding down a button. In each case, if you press and release the corresponding button instead of holding it down, your keyboard will return that character as expected. Exceptions are Caps Lock and 8.
+
 Numpad Mode—hold down Caps Lock (Actually use Caps Lock? See next section.)
 * Creates a number grid under the home row, with Spacebar as 0, M as 1, J as 4 and G as 7.</li>
 * To the left, shortcuts to backspace a letter, word, or line under Y, H and N respectively.
