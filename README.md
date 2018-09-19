@@ -7,7 +7,7 @@ Karabiner Elements (https://pqrs.org/osx/karabiner/) is a program that allows yo
 
 I have created a suite of modifications that emulates layers on the keyboard which place hard-to-reach keys right underneath your fingers. This virtually eliminates having to use the number row for *any* reason, and does away with the arrow keys entirely. Scroll half-way down for a summary of the main features, and all the way to the bottom for installation. 
 
-Please note that I use the Dvorak keyboard layout exclusively for composition. Most of the modifications work exactly as intended on QWERTY layouts, but on occasion a symbol may seem to be in an odd place. 
+Please note that I use the Dvorak keyboard layout exclusively for composition. Most of the modifications work exactly as intended on QWERTY layouts, but on occasion a symbol may seem to be in an odd place, although as far as I can tell it might have ended up being the opposite (as usual…). 
 
 Dvorak users: the keys below are named after their appearance on a QWERTY keyboard, not after the character that you are typing. So if I refer to the J key, this is the button that creates the letter "h" in your world. Hopefully, you are familiar with the effect. 
 
