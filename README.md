@@ -7,13 +7,15 @@ Karabiner Elements (https://pqrs.org/osx/karabiner/) is a program that allows yo
 
 I have created a suite of modifications that emulates layers on the keyboard which place hard-to-reach keys right underneath your fingers. This virtually eliminates having to use the number row for *any* reason, and does away with the arrow keys entirely. Scroll half-way down for a summary of the main features, and all the way to the bottom for installation. 
 
-Please note that I use the Dvorak keyboard layout exclusively for composition. Most of the modifications work exactly as intended on QWERTY layouts, but on occasion a symbol may seem to be in an odd place, although as far as I can tell it might have ended up being the opposite (as usual…). 
+Please note that I use the Dvorak keyboard layout exclusively for composition so I have not tested this in QWERTY very much. However, the modifications seem to work exactly as intended on QWERTY layouts. 
 
 Dvorak users: the keys below are named after their appearance on a QWERTY keyboard, not after the character that you are typing. So if I refer to the J key, this is the button that creates the letter "h" in your world. Hopefully, you are familiar with the effect. 
 
 ## Summary
 
 Most "layers" are accessed by holding down a button. In each case, if you press and release the corresponding button instead of holding it down, your keyboard will return that character as expected. Exceptions are Caps Lock and 8.
+
+These are modular. You can choose to enable only some of them. You will always need to enable the corresponding trigger for each mode, however. 
 
 Numpad Mode—hold down Caps Lock (Actually use Caps Lock? See next section.)
 * Creates a number grid under the home row, with Spacebar as 0, M as 1, J as 4 and G as 7.</li>
@@ -55,6 +57,12 @@ Z Arrow Mode—hold down Z (semicolon on Dvorak keyboards). An unfinished attemp
 * Home Row is with Alt held down (word-by-word) starting on J
 * Bottom Row is with Command held down (Home, End, etc.) starting on M
 * Y is Delete-Forward, Spacebar is Backspace (alternate your thumbs for fast deleting), H deletes a word at a time and N deletes the entire row. 
+
+Z Select Mode—hold down Shift and Z. 
+* Must press both simultaneously; won't work if you cascade one after the other. 
+* Same as Z Arrow Mode, except with Shift held down, so it will select text that it navigates over. 
+* Same delete keys, except Y is Alt+Delete-Forward and will delete a word at a time. 
+* Note: Cannot switch to Z Arrow Mode simply by releasing Shift. Must release both Shift and Z, then re-depress Z. 
 
 ## Installation
 
