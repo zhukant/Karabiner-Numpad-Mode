@@ -793,6 +793,27 @@
               "value": 1
             }
           ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "symbols_mode",
+              "value": 1
+            }
+          ]
         }
       ]
     },
@@ -2564,17 +2585,17 @@
       ]
     },
     {
-      "description": "Z Select Mode Trigger [Z+Shift]",
+      "description": "Z Select Mode Trigger [W+Q]",
       "manipulators": [
         {
           "type": "basic",
           "from": {
             "simultaneous": [
               {
-                "key_code": "z"
+                "key_code": "w"
               },
               {
-                "key_code": "left_shift"
+                "key_code": "q"
               }
             ]
           },
