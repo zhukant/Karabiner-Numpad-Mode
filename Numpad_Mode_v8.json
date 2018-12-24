@@ -797,11 +797,11 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "a"
+            "key_code": "q"
           },
           "to": [
             {
-              "key_code": "semicolon",
+              "key_code": "z",
               "modifiers": [
                 "left_shift"
               ]
