@@ -2963,6 +2963,64 @@
           ]
         }
       ]
+    },
+    {
+      "description": "Number Row Mode Trigger [Backtick]",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "grave_accent_and_tilde"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "number_row_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "grave_accent_and_tilde"
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "number_row_mode",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Number Row Mode",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "left_gui"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "number_row_mode",
+              "value": 1
+            }
+          ]
+        },
+      ]
     }
   ]
 }
