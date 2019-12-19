@@ -3008,7 +3008,7 @@
             {
               "key_code": "c",
               "modifiers": [
-                "left_gui"
+                "command"
               ]
             }
           ],
@@ -3019,7 +3019,7 @@
               "value": 1
             }
           ]
-        },
+        }
       ]
     }
   ]
