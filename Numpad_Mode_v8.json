@@ -2581,6 +2581,24 @@
               "value": 1
             }
           ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "z_arrow_mode",
+              "value": 1
+            }
+          ]
         }
       ]
     },
