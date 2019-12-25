@@ -1,5 +1,8 @@
 {
   "title": "ZEnter",
+  "maintainers": [
+    "zhukant"
+  ],
   "rules": [
     {
       "description": "Z + Enter = Escape",
