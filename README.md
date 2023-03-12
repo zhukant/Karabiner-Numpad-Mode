@@ -66,7 +66,7 @@ Z Select Mode—hold down Shift and Z.
 
 ## Installation
 
-See this reference: https://pqrs.org/osx/karabiner/json.html
+See this reference: https://karabiner-elements.pqrs.org/docs/json/
 * In Karabiner Elements (see link at the top to download the app), enable a sample complex modification. If you also want Double-Shift Caps Lock, you'll need to enable a second complex modification from a *different* collection, so that you end up with two different files. Collections are all a single file, but DSCL is a separate file. (Preferences → Complex Modifications → Add Rule)
 * Open Finder on your Mac. 
 * Use Go → Go to folder… or Shift+Command+G
