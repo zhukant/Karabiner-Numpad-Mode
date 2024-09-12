@@ -385,6 +385,227 @@
       ]
     },
     {
+      "description": "F-keys Mode (Caps Lock + Number Row)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1"
+          },
+          "to": [
+            {
+              "key_code": "f1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2"
+          },
+          "to": [
+            {
+              "key_code": "f2"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3"
+          },
+          "to": [
+            {
+              "key_code": "f3"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4"
+          },
+          "to": [
+            {
+              "key_code": "f4"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "5"
+          },
+          "to": [
+            {
+              "key_code": "f5"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "6"
+          },
+          "to": [
+            {
+              "key_code": "f6"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "7"
+          },
+          "to": [
+            {
+              "key_code": "f7"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "8"
+          },
+          "to": [
+            {
+              "key_code": "f8"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "9"
+          },
+          "to": [
+            {
+              "key_code": "f9"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0"
+          },
+          "to": [
+            {
+              "key_code": "f10"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "hyphen"
+          },
+          "to": [
+            {
+              "key_code": "f11"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "equal_sign"
+          },
+          "to": [
+            {
+              "key_code": "f12"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "numpad_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Symbols Trigger [Tab]",
       "manipulators": [
         {

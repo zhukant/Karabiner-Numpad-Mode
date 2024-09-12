@@ -1,8 +1,15 @@
 # Karabiner-Numpad-Mode
 A Custom Complex Modification for Karabiner Elements by Tekezo
 
-## General Info
+- [Karabiner-Numpad-Mode](#karabiner-numpad-mode)
+- [General Info](#general-info)
+- [Summary](#summary)
+- [Installation](#installation)
+- [Customization Tips](#customization-tips)
+- [Version History](#version-history)
+- [Reference Sheet](#reference-sheet)
 
+# General Info
 Karabiner Elements (https://pqrs.org/osx/karabiner/) is a program that allows you to remap keys on your keyboard to emulate a certain experience, access uncommon functions, or just out of convenience. 
 
 I have created a suite of modifications that emulates layers on the keyboard which place hard-to-reach keys right underneath your fingers. This virtually eliminates having to use the number row for *any* reason, and does away with the arrow keys entirely. Scroll half-way down for a summary of the main features, and all the way to the bottom for installation. 
@@ -11,17 +18,17 @@ Please note that I use the Dvorak keyboard layout exclusively for composition so
 
 Dvorak users: the keys below are named after their appearance on a QWERTY keyboard, not after the character that you are typing. So if I refer to the J key, this is the button that creates the letter "h" in your world. Hopefully, you are familiar with the effect. 
 
-## Summary
-
+# Summary
 Most "layers" are accessed by holding down a button. In each case, if you press and release the corresponding button instead of holding it down, your keyboard will return that character as expected. Exceptions are Caps Lock and 8.
 
 These are modular. You can choose to enable only some of them. You will always need to enable the corresponding trigger for each mode, however. 
 
 Numpad Mode—hold down Caps Lock (Actually use Caps Lock? See next section.)
-* Creates a number grid under the home row, with Spacebar as 0, M as 1, J as 4 and G as 7.</li>
+* Creates a number grid under the home row, with Spacebar as 0, M as 1, J as 4 and G as 7.
 * To the left, shortcuts to backspace a letter, word, or line under Y, H and N respectively.
 * To the right, symbols that are hard to reach for right hand 5th finger, esp. Hyphen and Backslash.
-* A creates a colon so you can write the time without releasing Caps Lock. Will add more symbols that are commonly adjacent to numbers later in this fashion. 
+* Converts the number row keys (1-0, and also hyphen and equal sign in QWERTY, or the square brackets in Dvorak) into F-keys (F1-F12).
+* A creates a colon so you can write the time without releasing Caps Lock. Will add more symbols that are commonly adjacent to numbers later in this fashion.
 
 Double-Shift Caps Lock—have your Caps Lock and eat it, too.
 * Press both Shift keys simultaneously to turn on Caps Lock. Turns on Caps Lock light, too, as expected.
@@ -64,8 +71,7 @@ Z Select Mode—hold down Shift and Z.
 * Same delete keys, except Y is Alt+Delete-Forward and will delete a word at a time. 
 * Note: Cannot switch to Z Arrow Mode simply by releasing Shift. Must release both Shift and Z, then re-depress Z. 
 
-## Installation
-
+# Installation
 See this reference: https://karabiner-elements.pqrs.org/docs/json/
 * In Karabiner Elements (see link at the top to download the app), enable a sample complex modification. If you also want Double-Shift Caps Lock, you'll need to enable a second complex modification from a *different* collection, so that you end up with two different files. Collections are all a single file, but DSCL is a separate file. (Preferences → Complex Modifications → Add Rule)
 * Open Finder on your Mac. 
@@ -78,8 +84,33 @@ See this reference: https://karabiner-elements.pqrs.org/docs/json/
 * Remove the complex modifications you added from the Karabiner preferences menu.
 * When you go to add new complex modifications, you should see that the ones from this repository have become available. As soon as you activate them, this should start working right away.
 
-## Reference Sheet
+# Customization Tips
+Want to modify this configuration to better suit your needs? Here are some tips:
 
+1. Modifying Key Mappings:
+   - In the JSON file, look for the "manipulators" array within each rule
+   - The "from" key specifies the key being pressed
+   - The "to" key specifies the resulting action
+
+2. Adding New Modes:
+   - Create a new object in the "rules" array
+   - Define a new variable for the mode (e.g., "variable_if": "new_mode", "value": 1)
+   - Create manipulators for the desired key mappings
+
+3. Changing Mode Triggers:
+   - Locate the rule that sets the mode variable
+   - Modify the "from" key to change the trigger key
+
+4. Remember to back up your original configuration before making changes!
+
+# Version History
+- v1.1 (September 2024)
+  - Extended Numpad Mode [Caps Lock] to replace number bar (1–0, -, =) with function keys.
+
+- v1.0 (Original Release)
+  - Initial release with Numpad Mode, Symbols Mode, Extra Symbols Mode, Arrow Key Mode, and Z Arrow Mode
+
+# Reference Sheet
 ```
           Regular Keys 
 
@@ -137,7 +168,7 @@ See this reference: https://karabiner-elements.pqrs.org/docs/json/
 |     |  ⁄  |  €  |  ‹  |  »  |
 +-----+-----+-----+-----+-----+
       |        ‚        |
-      +-----------------+
+      +-----------------+
              
              Dvorak
 
@@ -183,7 +214,7 @@ See this reference: https://karabiner-elements.pqrs.org/docs/json/
 |     |  ⁄  |  €  |  ‹  |  »  |
 +-----+-----+-----+-----+-----+
       |        ‚        |
-      +-----------------+
+      +-----------------+
       
       
             RUSSIAN
