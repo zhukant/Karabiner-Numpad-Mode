@@ -20,11 +20,22 @@ select_mode := false
 
 ; Make Tab work as a modifier key for symbols
 *Tab:: {
+    if GetKeyState("Alt", "P") {  ; If Alt is held down
+        if GetKeyState("Shift", "P") {  ; Check if Shift is also held
+            Send "{Alt Down}{Shift Down}{Tab}"  ; Pass through Alt+Shift+Tab
+        } else {
+            Send "{Alt Down}{Tab}"  ; Pass through Alt+Tab
+        }
+        return
+    }
     global symbols_mode
     symbols_mode := true
 }
 
 *Tab Up:: {
+    if GetKeyState("Alt", "P") {   ; If Alt is still held down
+        return                     ; Don't interfere with Alt+Tab
+    }
     global symbols_mode
     symbols_mode := false
     if (A_PriorKey = "Tab")
@@ -99,7 +110,7 @@ r::Send "("        ; Shift + 9
 Space::Send ")"    ; Shift + 0
 
 ; Additional Symbols Mode symbols
-a::Send ":"
+'::Send ":"
 z::Send "|"
 s::Send "{{}"
 -::Send "{}}"
