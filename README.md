@@ -24,7 +24,7 @@ Most "layers" are accessed by holding down a button. In each case, if you press 
 These are modular. You can choose to enable only some of them. You will always need to enable the corresponding trigger for each mode, however. 
 
 Numpad Mode—hold down Caps Lock (Actually use Caps Lock? See next section.)
-* Creates a number grid under the home row, with Spacebar as 0, M as 1, J as 4 and G as 7.
+* Creates a number grid under the home row, with Spacebar as 0, M as 1, J as 4 and U as 7.
 * To the left, shortcuts to backspace a letter, word, or line under Y, H and N respectively.
 * To the right, symbols that are hard to reach for right hand 5th finger, esp. Hyphen and Backslash.
 * Converts the number row keys (1-0, and also hyphen and equal sign in QWERTY, or the square brackets in Dvorak) into F-keys (F1-F12).
