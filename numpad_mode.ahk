@@ -7,6 +7,25 @@ symbols_mode := false
 arrow_mode := false
 select_mode := false
 
+; Watchdog: if a trigger key's Up hotkey is ever missed (e.g. a game or UAC
+; prompt eats the physical key-up before the hook sees it), a mode can get
+; stuck on indefinitely. GetKeyState with "P" reads real hardware state
+; straight from the OS, independent of the hook, so this periodically
+; catches and silently clears any mode whose trigger key isn't actually
+; still being held.
+ReconcileModes() {
+    global numpad_mode, symbols_mode, arrow_mode, select_mode
+    if (numpad_mode && !GetKeyState("CapsLock", "P"))
+        numpad_mode := false
+    if (symbols_mode && !GetKeyState("Tab", "P"))
+        symbols_mode := false
+    if ((arrow_mode || select_mode) && !GetKeyState(";", "P")) {
+        arrow_mode := false
+        select_mode := false
+    }
+}
+SetTimer ReconcileModes, 150
+
 ; Make CapsLock work as a modifier key
 *CapsLock:: {
     global numpad_mode
