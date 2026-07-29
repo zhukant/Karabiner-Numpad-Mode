@@ -1,41 +1,13 @@
 ﻿#Requires AutoHotkey v2.0
 #SingleInstance Force
 
-; Initialize persistent mode variables
-numpad_mode := false
-symbols_mode := false
-arrow_mode := false
-select_mode := false
+; Each "layer" below is active only while its trigger key is physically
+; held, via #HotIf on GetKeyState(key, "P") - checked live on every
+; keystroke rather than tracked in a variable.
 
-; Watchdog: if a trigger key's Up hotkey is ever missed (e.g. a game or UAC
-; prompt eats the physical key-up before the hook sees it), a mode can get
-; stuck on indefinitely. GetKeyState with "P" reads real hardware state
-; straight from the OS, independent of the hook, so this periodically
-; catches and silently clears any mode whose trigger key isn't actually
-; still being held.
-ReconcileModes() {
-    global numpad_mode, symbols_mode, arrow_mode, select_mode
-    if (numpad_mode && !GetKeyState("CapsLock", "P"))
-        numpad_mode := false
-    if (symbols_mode && !GetKeyState("Tab", "P"))
-        symbols_mode := false
-    if ((arrow_mode || select_mode) && !GetKeyState(";", "P")) {
-        arrow_mode := false
-        select_mode := false
-    }
-}
-SetTimer ReconcileModes, 150
-
-; Make CapsLock work as a modifier key
-*CapsLock:: {
-    global numpad_mode
-    numpad_mode := true
-}
-
-*CapsLock Up:: {
-    global numpad_mode
-    numpad_mode := false
-}
+; Make CapsLock work as a modifier key (swallow its normal toggle action)
+*CapsLock::return
+*CapsLock Up::return
 
 ; Make Tab work as a modifier key for symbols
 *Tab:: {
@@ -45,41 +17,25 @@ SetTimer ReconcileModes, 150
         } else {
             Send "{Alt Down}{Tab}"  ; Pass through Alt+Tab
         }
-        return
     }
-    global symbols_mode
-    symbols_mode := true
 }
 
 *Tab Up:: {
     if GetKeyState("Alt", "P") {   ; If Alt is still held down
         return                     ; Don't interfere with Alt+Tab
     }
-    global symbols_mode
-    symbols_mode := false
     if (A_PriorKey = "Tab")
         Send "{Tab}"
 }
 
-; Make semicolon work as a modifier for Arrow Mode
-*;:: {
-    global arrow_mode, select_mode
-    if GetKeyState("Shift", "P") {
-        select_mode := true
-    } else {
-        arrow_mode := true
-    }
-}
+; Make semicolon work as a modifier for Arrow/Select Mode
+*;::return
 
 *; Up:: {
-    global arrow_mode, select_mode
-    if (select_mode) {
-        select_mode := false
-        if (A_PriorKey = ";")
+    if (A_PriorKey = ";") {
+        if GetKeyState("Shift", "P")
             Send ":"
-    } else {
-        arrow_mode := false
-        if (A_PriorKey = ";")
+        else
             Send ";"
     }
 }
@@ -89,7 +45,7 @@ LShift & RShift::SetCapsLockState !GetKeyState("CapsLock", "T")
 RShift & LShift::SetCapsLockState !GetKeyState("CapsLock", "T")
 
 ; Basic numpad layout (Dvorak)
-#HotIf numpad_mode
+#HotIf GetKeyState("CapsLock", "P")
 m::Send "1"
 w::Send "2"
 v::Send "3"
@@ -116,7 +72,7 @@ b::Send "+{Home}{Backspace}"  ; Delete to start of line
 #HotIf
 
 ; Symbols mode (when Tab is held)
-#HotIf symbols_mode
+#HotIf GetKeyState("Tab", "P") && !GetKeyState("Alt", "P")
 m::Send "{!}"      ; Shift + 1
 w::Send "@"        ; Shift + 2
 v::Send "{#}"      ; Shift + 3
@@ -143,7 +99,7 @@ b::Send "+{End}{Delete}"
 #HotIf
 
 ; Arrow Mode (when semicolon is held)
-#HotIf arrow_mode
+#HotIf GetKeyState(";", "P") && !GetKeyState("Shift", "P")
 ; First level - character movement
 g::Left
 c::Up
@@ -170,7 +126,7 @@ b::Send "+{Home}{Backspace}"
 #HotIf
 
 ; Select Mode (when Shift+semicolon is held)
-#HotIf select_mode
+#HotIf GetKeyState(";", "P") && GetKeyState("Shift", "P")
 ; First level - character movement with selection
 g::+Left
 c::+Up
